@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Leveraging Semantic 3D City Models for Enhanced Radar Object Detection via Self-Supervised Radar-Image Learning.">
+        content="RADLER: Radar Object Detection Leveraging Semantic 3D City Models and Self-Supervised Radar-Image Learning">
   <meta name="keywords" content="Radar Object Detection, Semantic 3D City Model, CityGML, Self-Supervised Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leveraging Semantic 3D City Models for Enhanced Radar Object Detection via Self-Supervised Radar-Image Learning</title>
+  <title>RADLER: Radar Object Detection Leveraging Semantic 3D City Models and Self-Supervised Radar-Image Learning</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -74,7 +74,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Leveraging Semantic 3D City Models for Enhanced Radar Object Detection via Self-Supervised Radar-Image Learning</h1>
+          <h1 class="title is-1 publication-title">RADLER: Radar Object Detection Leveraging Semantic 3D City Models and Self-Supervised Radar-Image Learning</h1>
           <div class="is-size-5 publication-authors">
             <!-- TODO: Update links -->
             <span class="author-block">
@@ -170,7 +170,7 @@
       </video> -->
       <img id="teaser" src="./static/images/teaser.png" alt="Teaser Image" />
       <h2 class="subtitle has-text-centered">
-        Leveraging Semantic 3D City Models for Enhanced Radar Object Detection via Self-Supervised Radar-Image Learning
+        RADLER: Radar Object Detection Leveraging Semantic 3D City Models and Self-Supervised Radar-Image Learning
       </h2>
     </div>
   </div>
@@ -185,13 +185,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Semantic 3D city models in the format of CityGML are an extensive and easily accessible source of prior environmental 
-            information with the potential to mitigate the influence of noise in radar data on tasks such as radar object detection. 
-            However, to our knowledge, no prior studies have explored this topic. This paper proposes an autoencoder-based model 
-            developed under the contrastive \gls{ssl} paradigm that leverages semantic 3D city models to enhance radar object detection. 
-            The model's encoder is trained contrastively against images in the pretext task and subsequently transferred to detect 
-            objects with the decoder. We evaluate our model extensively on our independently collected dataset and demonstrate significant
-             improvements over baseline models.
+            Semantic 3D city models are worldwide easy-accessible, providing accurate, object-oriented, and semantic-rich 3D priors. 
+            To the best of our knowledge, their potential to mitigate the noise impact on radar object detection remains under-explored. 
+            In this paper, we first introduce a new dataset, RadarCity, 
+            comprising 54K synchronized radar-image pairs with semantic 3D city models collected in Munich, Germany. 
+            Moreover, we introduce a novel neural network, RADLER, 
+            leveraging the effectiveness of contrastive self-supervised learning (SSL) and semantic 3D city models to enhance radar object detection. 
+            Specifically, we first obtain the robust radar features via a SSL network in the radar-image pretext task. 
+            We then use a simple yet effective feature fusion strategy to incorporate semantic-depth features from semantic 3D city models. 
+            Having prior 3D information as guidance, RADLER obtains more fine-grained details to enhance radar object detection. 
+            We extensively evaluate RADLER on the collected RadarCity dataset and demonstrate average 
+            improvements of 5.46% in mean average precision (mAP) and 3.51% in mean average recall (mAR) over previous radar object detection methods.
           </p>
         </div>
       </div>
@@ -211,33 +215,61 @@
         <h2 class="title is-3">Videos</h2>
         <div class="publication-video">
           <video poster="" id="arc1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Arcisstrasse_track_line.mov"
+                    type="video/mp4">
+          </video>
+          <h3 class="subtitle has-text-centered">
+            Tracking moving objects on the RA maps.
+          </h3>
+          <video poster="" id="arc1" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/Arc1.mp4"
                     type="video/mp4">
           </video>
+          <h3 class="subtitle has-text-centered">
+            Detection Results(Arcisstraße 1)
+          </h3>
           <video poster="" id="arc2" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/Arc2.mp4"
                     type="video/mp4">
           </video>
+          <h3 class="subtitle has-text-centered">
+            Detection Results (Arcisstraße 2)
+          </h3>
           <video poster="" id="arc3" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/Arc3.mp4"
                     type="video/mp4">
           </video>
+          <h3 class="subtitle has-text-centered">
+            Detection Results (Arcisstraße 3)
+          </h3>
           <video poster="" id="arc4" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/Arc4.mp4"
                     type="video/mp4">
           </video>
+          <h3 class="subtitle has-text-centered">
+            Detection Results (Arcisstraße 4)
+          </h3>
           <video poster="" id="arc5" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/Arc5.mp4"
                     type="video/mp4">
           </video>
+          <h3 class="subtitle has-text-centered">
+            Detection Results (Arcisstraße 5)
+          </h3>
           <video poster="" id="gab1" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/Gab1.mp4"
                     type="video/mp4">
           </video>
+          <h3 class="subtitle has-text-centered">
+            Detection Results (Gabelsbergerstraße 1)
+          </h3>
           <video poster="" id="gab2" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/Gab2.mp4"
                     type="video/mp4">
           </video>
+          <h3 class="subtitle has-text-centered">
+            Detection Results (Gabelsbergerstraße 2)
+          </h3>
         </div>
       </div>
     </div>
